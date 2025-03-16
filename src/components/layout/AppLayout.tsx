@@ -193,7 +193,7 @@ interface AppLayoutProps {
 
 const AppLayout = ({ children }: AppLayoutProps) => {
   const location = useLocation();
-  const showSidebar = !["/", "/manual", "/settings"].includes(location.pathname);
+  const showSidebar = !["/", "/manual", "/settings", "/video-generator"].includes(location.pathname);
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   
   const toggleSidebar = () => {

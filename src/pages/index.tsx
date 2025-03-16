@@ -178,6 +178,28 @@ const Index = () => {
             <Link to="/graph">Get Started</Link>
           </Button>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+          <Card>
+            <CardHeader>
+              <CardTitle className="flex items-center gap-2">
+                <Layers className="h-5 w-5" />
+                Video Generator
+              </CardTitle>
+              <CardDescription>
+                Create videos from images using AI
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <p>Upload images and generate videos with the power of local AI models.</p>
+            </CardContent>
+            <CardFooter>
+              <Button asChild variant="outline" className="w-full">
+                <Link to="/video-generator">Generate Video</Link>
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
       </main>
       
       <footer className="border-t py-6 md:py-0">

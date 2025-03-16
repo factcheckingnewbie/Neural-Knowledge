@@ -7,6 +7,7 @@ import TreePage from "./pages/tree";
 import NodesPage from "./pages/nodes";
 import SettingsPage from "./pages/settings";
 import ManualPage from "./pages/manual";
+import VideoGeneratorPage from "./pages/video-generator";
 
 createRoot(document.getElementById("root")!).render(
   <BrowserRouter>
@@ -17,6 +18,7 @@ createRoot(document.getElementById("root")!).render(
       <Route path='/nodes' element={<NodesPage />} />
       <Route path='/settings' element={<SettingsPage />} />
       <Route path='/manual' element={<ManualPage />} />
+      <Route path='/video-generator' element={<VideoGeneratorPage />} />
     </Routes>
   </BrowserRouter>
 );
