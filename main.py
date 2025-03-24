@@ -39,9 +39,10 @@ class EventBus:
 
 from models.gpt2.model import GPT2Model
 from models.nltk.model import NLTKModel
-from guis.cli.pkm_interface import PKMCommandLineInterface
-# Import the existing CommandLineInterface
+# First import the parent class
 from guis.cli.raw_commands.interface import CommandLineInterface
+# Then import the child class
+from guis.cli.pkm_interface import PKMCommandLineInterface
 
 if __name__ == "__main__":
     print("Starting event bus...")
