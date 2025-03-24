@@ -39,8 +39,8 @@ class EventBus:
 
 from models.gpt2.model import GPT2Model
 from models.nltk.model import NLTKModel
+# Import both interfaces from their correct locations
 from guis.cli.pkm_interface import PKMCommandLineInterface
-# Import CommandLineInterface from the correct location
 from guis.cli.raw_commands.interface import CommandLineInterface
 
 if __name__ == "__main__":
