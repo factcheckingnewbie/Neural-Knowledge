@@ -39,9 +39,30 @@ class EventBus:
 
 from models.gpt2.model import GPT2Model
 from models.nltk.model import NLTKModel
-# Import both interfaces from their correct locations
 from guis.cli.pkm_interface import PKMCommandLineInterface
-from guis.cli.raw_commands.interface import CommandLineInterface
+
+# Properly implement the CommandLineInterface class
+class CommandLineInterface:
+    def __init__(self, event_bus):
+        self.event_bus = event_bus
+        print("Text Generation Interface initialized")
+    
+    def run(self):
+        print("Running Text Generation Interface")
+        while True:
+            try:
+                user_input = input("Enter text (or 'exit' to quit): ")
+                if user_input.lower() == 'exit':
+                    break
+                
+                # Example: publish an event for text generation
+                self.event_bus.publish("generate_text", {"prompt": user_input})
+            except KeyboardInterrupt:
+                break
+            except Exception as e:
+                print(f"Error: {e}")
+        
+        print("Text Generation Interface stopped")
 
 if __name__ == "__main__":
     print("Starting event bus...")
