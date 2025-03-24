@@ -41,14 +41,8 @@ from models.gpt2.model import GPT2Model
 from models.nltk.model import NLTKModel
 from guis.cli.pkm_interface import PKMCommandLineInterface
 
-class CommandLineInterface:
-    # Your CLI class definition
-    def __init__(self, event_bus):
-        self.event_bus = event_bus
-        
-    def run(self):
-        # Implementation of the run method
-        print("Running Command Line Interface")
+# Import or define the TextGenerationInterface
+from guis.cli.text_generation_interface import TextGenerationInterface
 
 if __name__ == "__main__":
     print("Starting event bus...")
@@ -70,7 +64,8 @@ if __name__ == "__main__":
     interface_choice = input("Select interface: 1) Text Generation, 2) PKM: ")
 
     if interface_choice == "1":
-        cli = CommandLineInterface(event_bus)
+        # Use TextGenerationInterface instead of CommandLineInterface
+        cli = TextGenerationInterface(event_bus)
         cli.run()
     else:
         pkm_cli = PKMCommandLineInterface(event_bus)
